@@ -1,0 +1,169 @@
+%%use beamer to create a presentation
+%%high energy physics class final project
+%%topic : YM instantons
+\documentclass[10pt]{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{tikz-feynman}
+\usepackage{tikz-3dplot}
+\usepackage{tikz-cd}
+\usepackage{physics}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{listings}
+
+\usetheme{metropolis}
+\usecolortheme{beaver}
+
+\title{Yang-Mills Instantons}
+\author{Seongmin Kim, Taeyoon Kim}
+\institute{SNU}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%%copilot should give 기본 구조 of each page, \begin{frame} \frametitle{} \begin{itemize} \item \end{itemize} \end{frame}
+\begin{frame}
+\frametitle{Table of Contents}
+%% 1. What is instanton?
+%% 2. Instanton effect in Path Integral
+%% 3. Yang-Mills Instanton : topology, and Anomalies
+%% 4. Effects of Instantons in real world
+%% 5. Calculation of Instanton effects
+%% 6. Conclusion
+\begin{itemize}
+\item What is instanton?
+\item Instanton effect in Path Integral
+\item Yang-Mills Instanton : topology, and Anomalies
+\item Effects of Instantons in real world
+\item Calculation of Instanton effects
+\item Conclusion
+\item References
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What is instanton?}
+\begin{itemize}
+\item Mathematicaly, Instanton is a solution to the classical field equations of motion in Euclidean space.
+\begin{equation}
+    \delta S_E [\psi_{\text{inst}}] = 0 \rightarrow \text{Euler-Lagrange equation}
+\end{equation}
+\item Instanton solutions of Euclidean EL equation are localized in (Euclidean) space and time, and have finite (Euclidean) action.
+\item In Minkofski QFT, it gives a non-perturbative effect: the tunneling between the classical vacua.
+\item Instantons are important in understanding non-perturbative effects and tunneling between vacua in quantum field theory.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Instanton effect in Path Integral}
+\begin{itemize}
+\item In path integral formalism, instantons are classical solution, i.e., the saddle points of the action.
+\item Instantons only show up in the Euclidean path integral.
+\item Is it physically meaningful? Do we have to consider this effect in Minkowski space QFT?
+\item So the path integral is dominated by the instanton contributions in the semiclassical limit.
+\item The full path integral is given by the sum of all instanton contributions, with small fluctuations around them.
+\end{itemize}
+\begin{equation}
+Z = \int \mathcal{D}\phi e^{-S[\phi]} = \sum_{\text{instantons}}  e^{-S_{\text{inst}}} \int \mathcal{D}\delta\phi e^{-S_{\text{fluct}}[\delta\phi]}
+\end{equation}
+\end{frame}
+\begin{frame}
+    \frametitle{Instanton effect in Path Integral : Example}
+    \begin{itemize}
+    \item A simple example: the one-dimensional quantum mechanics with two minima.
+    \item The potential is given by $V(x) = \frac{1}{2}x^4 - \frac{1}{2}x^2$, and the action is $S = \int dt \left(\frac{1}{2}\dot{x}^2 - V(x)\right)$.
+    \item The Euclidean action is $S_E = \int d\tau \left(\frac{1}{2}\dot{x}^2 + V(x)\right)$, and the Euclidean EOM has a classical solution, starting from $x = -1$ at $\tau = -\infty$ and ending at $x = 1$ at $\tau = \infty$.
+    \item To evaluate correct path integral, We need to consider all the posible semiclassical paths, including the instanton solution. for example,
+    \item If  $T \gg t_{\text{inst}}, $all the instanton solution can be approximated as a composition of $n$ single instanton solution, at time $t_1, ... t_n$, and the instanton action is given by $S = \sum_{i=1}^n S_{\text{inst}}=nS_{\text{inst}}$.
+
+    \end{itemize}
+    %% the matrix element of e^(-HT) from x = -1 to x = 1, using the path integral including instanton solution.
+    %% small font size
+    
+\end{frame}
+\begin{frame}
+    \frametitle{Instanton effect in Path Integral : Calculation}
+
+    So, now we can calculate the matrix element of $e^{-HT}$ from $x = -1$ to $x = 1$, using the path integral including instanton solution.
+    \begin{align*}
+    \small
+    \langle 1 | e^{-HT} | 1 \rangle = \int \mathcal{D}x e^{-S_E} = \sum_{\text{instantons}} e^{-S_{\text{inst}}} \int \mathcal{D}\delta x e^{-S_{\text{fluct}}} \\
+    = e^{-T/2} \sum_{n \text{ odd}} \int_{-T/2}^{T/2} d\tau_1 \int_{-T/2}^{\tau_1} d\tau_2 \cdots \int_{-T/2}^{\tau_{n-1}} d\tau_n e^{-nS_{\text{inst}}} \int \mathcal{D}\delta x e^{-S_{\text{fluct}}} 
+    \end{align*}
+
+
+Here, the fluctuation path integral can be factorized into $n$ parts, which are the fluctuation path integrals around each instanton solution.
+\begin{align*}
+\small
+\int \mathcal{D}\delta x e^{-S_{\text{fluct}}} &= \left(\int \mathcal{D}\delta x_n e^{-S_{\text{fluct}}}\right)^n e^{-T/2}= K^n e^{-T/2} \\
+    \langle 1 | e^{-HT} | 1 \rangle &= e^{-T/2} \sum_{n \text{ odd}} \int_{-T/2}^{T/2} d\tau_1 \int_{-T/2}^{\tau_1} d\tau_2 \cdots \int_{-T/2}^{\tau_{n-1}} d\tau_n (Ke^{-S_{\text{inst}}})^n \\
+    \langle 1 | e^{-HT} | 1 \rangle &=e^{-T/2} \sum_{n \text{ odd}} \frac{1}{n!} K^n(e^{-S_{\text{inst}}})^n T^n = e^{-T/2} \sinh(KTe^{-S_{\text{inst}}}) \\
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Instanton effect in Path Integral : Conclusion}
+\begin{itemize}
+\item The Path integral including instanton solution gives the correct matrix element of $e^{-HT}$ from $x = -1$ to $x = 1$: $\langle 1 | e^{-HT} | 1 \rangle = e^{-T/2} \sinh(KTe^{-S_{\text{inst}}})$.
+\item By changing the result to $T \rightarrow it$, we can get the propagator of the Minkowski QM: $\langle 1 | e^{-iHT} | 1 \rangle = e^{-it/2} \sin(Kte^{-S_{\text{inst}}})$.
+\item No instanton solution in Minkowski space, but the instanton effect is still important in understanding the non-perturbative effects in Minkowski QFT.
+\item Why? Wick rotation is essential in the path integral formalism, so even if the instanton solution is not a solution of the Minkowski EOM, it still contributes to the path integral.
+
+\end{itemize}
+\end{frame}
+%new page
+\begin{frame}
+\frametitle{Yang-Mills Instanton : Introduction}
+\begin{itemize}
+\item Yang-Mills instantons are the instanton solutions of the Yang-Mills theory.
+\item The Yang-Mills action is given by $S = \int d^4x \left(-\frac{1}{4g^2}F_{\mu\nu}^a F^{\mu\nu a}\right)$, and the Euclidean action is $S_E = \int d^4x \left(\frac{1}{4g^2}F_{\mu\nu}^a F^{\mu\nu a}\right)$.
+\item The Euclidean EOM is given by $\mathcal{D}_\mu F^{\mu\nu a} = 0$, with the Bianchi identity $\sum_{\text{cyc}}\mathcal{D}_\mu \tilde{F}^{\nu\rho a} = 0$.
+\item The YM instanton solution is nontrivial solution of the EOM, and can be obtained by solving the self-dual equation $\tilde{F}^{\mu\nu a} = F^{\mu\nu a}$.
+%% 공변미분 D 글씨체 \mathcal{D}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Yang-Mills Instanton : Self-dual equation}
+    \begin{itemize}
+    \item Hodge dual operator : $\tilde{F}^{\mu\nu a} = \frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}^a$.
+    \item The self-dual equation is given by $\tilde{F}^{\mu\nu a} = F^{\mu\nu a}$.
+    \item All the 2-forms can be decomposed into self-dual and anti-self-dual parts: $F^{\mu\nu a} = F^{\mu\nu a}_+ + F^{\mu\nu a}_-$.
+    \item If either $F^{\mu\nu a}_+$ or $F^{\mu\nu a}_-$ is zero, the solution is called self-dual or anti-self-dual, and satisfies the EOM of the YM theory, $\mathcal{D}_\mu F^{\mu\nu a} = 0$.
+    %% 공변미분 D 글씨체 \mathcal{D}
+    \end{itemize}
+    \end{frame}
+
+\begin{frame}
+        \frametitle{Yang-Mills Instanton : evaluating $S_{\text{inst}}$}
+        \begin{itemize}
+        \item The instanton action is given by $S_{\text{inst}} = \int d^4x \left(\frac{1}{4g^2}F_{\mu\nu}^a F^{\mu\nu a}\right)$.
+        \item The action can be evaluated easily when the instanton is self-dual or anti-self-dual.
+        \end{itemize}
+        \begin{align*}
+        S_{\text{YM}} &= \int d^4x \left(\frac{1}{4g^2}F_{\mu\nu}^a F^{\mu\nu a}\right) \\
+        &=  \frac{1}{4g^2} \int d^4x \left(F_{\mu\nu}^a \pm \tilde{F}_{\mu\nu}^a\right)^2 \mp \frac{1}{2g^2} \int d^4x \tilde{F}_{\mu\nu}^a F^{\mu\nu a} \\ 
+        &\geq \pm \frac{1}{2g^2} \int d^4x \tilde{F}_{\mu\nu}^a F^{\mu\nu a} = \frac{8\pi^2}{g^2}|n|
+        \end{align*}
+        So, the instanton action is the bound, $8\pi^2/g^2|n|$, where $n$ is the instanton number(the 2nd chern number).
+        This derivation of the instanton action shows the topological nature of the instanton solution : the instanton action is quantized, and the instanton number is a topological invariant of the corresponding $SU(N)$ principal bundle.
+        \end{frame}
+
+\begin{frame}
+\frametitle{Yang-Mills Instanton : Physical effects}
+\begin{itemize}
+\item The instanton solution is a non-perturbative effect in the YM theory : $e^{-S_{\text{inst}}}=e^{-8\pi^2/g^2|n|}$ is the tunneling amplitude between the classical vacua, and non-perturbative in $g$.
+\item The instanton is a source of tunneling between classical vacua in the YM theory, and the true vaccume structure of the YM theory, and the $\theta$ term.
+\item THe instanton solution is also important in understanding the anomalies in the YM theory.
+\end{itemize}
+\end{frame}
+\end{document}
