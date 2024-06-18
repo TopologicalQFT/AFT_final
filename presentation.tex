@@ -42,6 +42,7 @@
 \begin{itemize}
 \item What is an Instanton?
 \item Instanton effect in Path Integral
+\item Solitons
 \item Yang-Mills Instanton : topology, and Anomalies
 \item Effects of Instantons in real world
 \item Calculation of Instanton effects
@@ -113,12 +114,27 @@ Here, the fluctuation path integral can be factorized into $n$ parts, which are 
 \begin{frame}
 \frametitle{Instanton effect in Path Integral : Conclusion}
 \begin{itemize}
-\item The Path integral including instanton solution gives the correct matrix element of $e^{-HT}$ from $x = -1$ to $x = 1$: $\langle 1 | e^{-HT} | 1 \rangle = e^{-T/2} \sinh(KTe^{-S_{\text{inst}}})$.
-\item By changing the result to $T \rightarrow it$, we can get the propagator of the Minkowski QM: $\langle 1 | e^{-iHT} | 1 \rangle = e^{-it/2} \sin(Kte^{-S_{\text{inst}}})$.
+\item The Path integral including instanton solution gives the correct matrix element of $e^{-HT}$ from $x = -1$ to $x = 1$: $\langle 1 | e^{-HT} | -1 \rangle = e^{-T/2} \sinh(KTe^{-S_{\text{inst}}})$.
+\item By changing the result to $T \rightarrow it$, we can get the propagator of the Minkowski QM: $\langle 1 | e^{-iHT} | -1 \rangle = e^{-it/2} \sin(Kte^{-S_{\text{inst}}})$.
 \item No instanton solution in Minkowski space, but the instanton effect is still important in understanding the non-perturbative effects in Minkowski QFT.
-\item Why? Wick rotation is essential in the path integral formalism, so even if the instanton solution is not a solution of the Minkowski EOM, it still contributes to the path integral.
+\item Amplitube $\langle 1 | e^{-iHT} | -1 \rangle = e^{-it/2} \sin(Kte^{-S_{\text{inst}}/\hbar})$ is non-perturbative in $\hbar$, and the instanton effect is essential in understanding the non-perturbative effects in quantum field theory.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Solitons}
+\begin{itemize}
+\item Solitons are the localized, finite energy solutions of the classical field equations of motion.
+\item Solitons ARE NOT instantons, but they are related to instantons.
+\item Instantons are localized in Euclidean space and time, and have finite Euclidean action.
+\item Solitons are localized in space, but stationary in time, and have finite energy.
 
 \end{itemize}
+
+%%%%%%%%%%% 사진 넣ㄴ어야함
 \end{frame}
 %new page
 \begin{frame}
@@ -154,16 +170,58 @@ Here, the fluctuation path integral can be factorized into $n$ parts, which are 
         &=  \frac{1}{4g^2} \int d^4x \left(F_{\mu\nu}^a \pm \tilde{F}_{\mu\nu}^a\right)^2 \mp \frac{1}{2g^2} \int d^4x \tilde{F}_{\mu\nu}^a F^{\mu\nu a} \\ 
         &\geq \pm \frac{1}{2g^2} \int d^4x \tilde{F}_{\mu\nu}^a F^{\mu\nu a} = \frac{8\pi^2}{g^2}|n|
         \end{align*}
-        So, the instanton action is the bound, $8\pi^2/g^2|n|$, where $n$ is the instanton number(the 2nd chern number).
+        So, the instanton action is the bound, $8\pi^2|n|/g^2$, where $n$ is the instanton number(the 2nd chern number).
         This derivation of the instanton action shows the topological nature of the instanton solution : the instanton action is quantized, and the instanton number is a topological invariant of the corresponding $SU(N)$ principal bundle.
         \end{frame}
 
 \begin{frame}
 \frametitle{Yang-Mills Instanton : Physical effects}
 \begin{itemize}
-\item The instanton solution is a non-perturbative effect in the YM theory : $e^{-S_{\text{inst}}}=e^{-8\pi^2/g^2|n|}$ is the tunneling amplitude between the classical vacua, and non-perturbative in $g$.
+\item The instanton solution is a non-perturbative effect in the YM theory : $e^{-S_{\text{inst}}}=e^{-8\pi^2|n|/g^2}$ is the tunneling amplitude between the classical vacua, and non-perturbative in $g$.
 \item The instanton is a source of tunneling between classical vacua in the YM theory, and the true vaccume structure of the YM theory, and the $\theta$ term.
 \item THe instanton solution is also important in understanding the anomalies in the YM theory.
 \end{itemize}
 \end{frame}
+\begin{frame}
+    \frametitle{Tunneling Effects in YM and QCD : $\theta$-vacuum}
+    \begin{itemize}
+    \item Classical vaccume of the YM theory?
+    \item The YM Hamiltonian is : 
+    \item So, there is only one classical vaccume, $F_\mu = 0$, and the vaccume energy is zero.
+    \item Then, what tunneling effect appears in the YM theory?
+    \end{itemize}
+    \end{frame}
+
+
+\begin{frame}
+    \frametitle{Easy example : QM on a circle}
+    \begin{itemize}
+    \item Consider the quantum mechanics on a circle, with the potential $V(x) = -\cos(x)$.
+    \item There is one classical vaccume, $x = 0$, and the vaccume energy is $V(0) = -1$.
+    \item But, in path integral formalism, the tunneling effect appears : paths with non-zero winding number.
+    \item This contribution can be interpreted as the tunneling to itself, and the tunneling amplitude is given by $e^{-S_{\text{inst}}/\hbar}$.
+    \item The tunneling amplitube is non-perturbative in $\hbar$, and this instanton effect gives non-perturbative corrections to the vacccume energy.
+    \end{itemize}
+    \end{frame}
+
+\begin{frame}
+    \frametitle{The theta-term}
+    \begin{itemize}
+    \item One can consider A "trivial term" aplied to abouve QM on a circle : $S= \int dt \left(\frac{1}{2}\dot{x}^2 + \cos(x) + \frac{\theta}{2\pi} \dot{x}\right)$.
+    \item Classicaly, this term is a total derivative, and has no effect on the classical dynamics : the Hamiltonian is the same.
+    \item Quantum mechanically : There is no effect in feynmann diagrams, no effect in the perturbative expansion in $\hbar$.
+    \item This theta term affects the tunneling probability amplitude between the vaccua, and the non-perturbative correction changes dramatically with the theta term.
+    \item the tunneling amplitude gets a phase factor : $e^{-S_{\text{inst}}/\hbar} \rightarrow e^{-S_{\text{inst}}/\hbar + i\theta n}$.
+    \end{itemize}
+    \end{frame}
+
+
+\begin{frame}
+    \frametitle{The theta-term : Continued}
+    \begin{itemize}
+    \item The path integral calculation, including the theta term, can be done same as before, using the dilute gas approximation.
+    \item 
+    \item 
+    \end{itemize}
+    \end{frame}
 \end{document}

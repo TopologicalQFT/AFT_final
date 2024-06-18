@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1717354107.32405 "c:/Users/kimsm/Documents/Beamer/presentation.tex" "presentation.pdf" "presentation" 1717354110.4373 0
-  "c:/Users/kimsm/Documents/Beamer/presentation.tex" 1717354102 9378 f517579c87d17bec42f0e8b95a58ea79 ""
+["pdflatex"] 1718721258.60486 "c:/Users/kimsm/Documents/Beamer/presentation.tex" "presentation.pdf" "presentation" 1718721262.25128 0
+  "c:/Users/kimsm/Documents/Beamer/presentation.tex" 1718721257 12155 30d224011fa6469b2313a7efeea85bdf ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1716715655 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1716717178 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1716716557 1536 293044035fd171bb1d18cf655049b101 ""
@@ -33,6 +33,7 @@
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi9.tfm" 1716721971 1700 6cce8f71de5b3d676f417bc2a77d1db2 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1716714392 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1716714392 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1716714392 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1716714392 36281 c355509802a035cadc5f15869451dcee ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1716714392 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb" 1716714392 24420 52dbb8e8aa0069a1b987309557f8d303 ""
@@ -44,6 +45,8 @@
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1716714392 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1716714392 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1716714392 32716 08e384dc442464e7285e891af9f45947 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1716714393 34694 870c211f62cb72718a00e353f14f254d ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1716714393 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb" 1716715656 94269 b8638f5578a6059af3119476061f491e ""
   "c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1716719857 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1716714622 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -309,10 +312,10 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1716723843 5529302 90924f286bd62ce7380ad2a7c245cc29 ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1716724119 8225741 ecfed6e312c99df9315d4f5b069fe919 ""
   "c:/texlive/2024/texmf.cnf" 1716723809 713 e69b156964470283e0530f5060668171 ""
-  "presentation.aux" 1717354110 1851 97126c382d6e481c57976def502c453b "pdflatex"
-  "presentation.nav" 1717354110 1202 a971439ba5eedf62b158aa4c3f07763d "pdflatex"
-  "presentation.out" 1717354109 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1717354102 9378 f517579c87d17bec42f0e8b95a58ea79 ""
+  "presentation.aux" 1718721261 2496 4523eb6e5bd813815247b99136e2ddf8 "pdflatex"
+  "presentation.nav" 1718721261 1667 223530e0d280496bcaab89de82b2e7ab "pdflatex"
+  "presentation.out" 1718721261 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1718721257 12155 30d224011fa6469b2313a7efeea85bdf ""
   (generated)
   "presentation.aux"
   "presentation.log"
