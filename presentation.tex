@@ -17,6 +17,7 @@
 \usepackage{cancel}
 \usepackage{color}
 \usepackage{listings}
+\usepackage[export]{adjustbox}
 
 \usetheme{metropolis}
 \usecolortheme{beaver}
@@ -220,13 +221,64 @@ Here, the fluctuation path integral can be factorized into $n$ parts, which are 
     \frametitle{The theta-term : Continued}
     \begin{itemize}
     \item The path integral calculation, including the theta term, can be done same as before, using the dilute gas approximation.
-    \item The correction term to the vaccume energy is given by $\Delta E \propto -e^{-S_{\text{inst}}/\hbar}\text{cos}(\theta)$.
+    \item The correction term to the vaccume energy is given by $\Delta E \propto -\text{cos}(\theta)e^{-S_{\text{inst}}/\hbar}$.
     \item In the wavefuncion picture, this theta term affects the ground state energy by changing the boundary condition of the wavefunction : $\psi(x+2\pi) = e^{i\theta}\psi(x)$.
     \item We numerically calculated the vaccume energy of the QM on a circle, and the result is consistent with the path integral calculation.
     \end{itemize}
     \end{frame}
 
+
 \begin{frame}
     \frametitle{The theta-term : Numerical Calculation}
+    %% put fig : E_G, E_G_diff
+    %% 두 그림을 서로 옆에 두기
+        \includegraphics[width=0.8 \textwidth]{E_G.png}
+
+        $\Delta E \propto -\text{cos}(\theta)e^{-S_{\text{inst}}/\hbar}$
+\end{frame}
+\begin{frame}
+    \frametitle{The theta-term : Numerical Calculation}
+
+        \includegraphics[width=0.6\textwidth]{E_G_diff.png}
+
+     $\Delta E \propto -\text{cos}(\theta)e^{-S_{\text{inst}}/\hbar}$, \ \ \ 
+     $S_{\text{inst}} = \int_0^{2\pi} dx \left(2-2\text{cos}(\theta)\right)^{1/2}=8$
     \end{frame}
+
+\begin{frame}
+    \frametitle{The theta-term : Conclusion}
+    \begin{itemize}
+    \item The instanton effect and the theta term in the QM on a circle changes the vaccume energy, and the vaccume structure of the theory.
+    \item The energy correction is non-perturbative in $\hbar$, asympotically : $\Delta E \propto -e^{-S_{\text{inst}}/\hbar}\text{cos}(\theta)$.
+    \item The theta term changes the vaccume energy by changing the phase of the instanton Amplitude
+    \item In wavefunction picture, the theta term changes the boundary condition of the wavefunction.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The QCD theta term}
+    \begin{itemize}
+    \item The theta term in QCD is given by $S_{\theta} = \frac{\theta}{32\pi^2}\int d^4x \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}^a F_{\rho\sigma}^a$.
+    \item The theta term is a total derivative, and has no effect on the classical dynamics, or perturbative QM of the QCD.
+    \item But, the theta term affects the non-perturbative effects of the QCD, and the vaccume structure of the QCD.
+    \item The theta term affects the vaccume energy of the QED, by changing the phase of the YM instanton amplitude.
+    \end{itemize}
+    \begin{equation}
+        e^{-\frac{8\pi^2}{g^2}|n|} \rightarrow e^{-\frac{8\pi^2}{g^2}|n| + i\theta n}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Effects on Real world physics}
+    \begin{itemize}
+    \item The theta term only affects the non-perturbative effects of the QCD.
+    \item At high energy scales, the theta term is not important, since the QCD is asymptotically free.
+    \item At low energy scales, QCD is confining, and the theta term is important. All the things are non-perturbative!
+    \item The theta term changes the vaccume energy of the QCD, the electric dipole moment of the neutron, ....
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{title}
+    
+\end{frame}
 \end{document}
