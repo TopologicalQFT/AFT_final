@@ -1,0 +1,11 @@
+\frametitle{Characteristic Class}
+\[
+    \begin{tikzcd}
+       \mathrm{Bun}_G(-)/\sim \arrow[r]
+        & {[-,\mathrm{BG}]}\arrow[l] \arrow[d, "Ch.Class"] \\
+         & {H^*(-,\mathbb{Z})}
+    \end{tikzcd}
+    \]
+
+    If we are given a data of $\mathrm{Bun}_G(-)/\sim$, there exists a way to have some $H^*(-,\mathbb{R})$. Which is known as the Chern-Weil homomorphism. The only remaining step is to check that such object made by Chern Weil is the characteristic class. The mathematical definition of the Chern class has some axioms, and one can verify if the Chern-Weil satisfies the axioms. This explains an integrality of Chern classes.
+
