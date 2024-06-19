@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1718772183.9636 "c:/Users/kimsm/Documents/Beamer/presentation_2.tex" "presentation_2.pdf" "presentation_2" 1718772190.23783 0
+["pdflatex"] 1718772983.75801 "c:/Users/kimsm/Documents/Beamer/presentation_2.tex" "presentation_2.pdf" "presentation_2" 1718772990.91665 0
   "E_G.png" 1718739116 286890 ca05be805cfd5133006f73adcbba1a5d ""
   "E_G_diff.png" 1718739119 200249 5c0245883b6bc75509adf00dcc6cd312 ""
-  "c:/Users/kimsm/Documents/Beamer/presentation_2.tex" 1718772182 23181 14d82d8b2d80585d5d1d5ea091f39fd1 ""
+  "c:/Users/kimsm/Documents/Beamer/presentation_2.tex" 1718772982 23184 f10c25746c11eeb11374d7803f5946ac ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1716715655 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1716717178 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1716716557 1536 293044035fd171bb1d18cf655049b101 ""
@@ -337,11 +337,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1716723843 5529302 90924f286bd62ce7380ad2a7c245cc29 ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1716724119 8225741 ecfed6e312c99df9315d4f5b069fe919 ""
   "c:/texlive/2024/texmf.cnf" 1716723809 713 e69b156964470283e0530f5060668171 ""
-  "presentation_2.aux" 1718772189 4726 726908f19411a93744f0b40e3ac82847 "pdflatex"
-  "presentation_2.nav" 1718772189 3248 04f88683e470406fc21eb9e1acb56761 "pdflatex"
-  "presentation_2.out" 1718772186 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation_2.tex" 1718772182 23181 14d82d8b2d80585d5d1d5ea091f39fd1 ""
-  "presentation_2.vrb" 1718772189 642 6e2e6cd4fface265efbc14943283cd0a "pdflatex"
+  "presentation_2.aux" 1718772990 4726 726908f19411a93744f0b40e3ac82847 "pdflatex"
+  "presentation_2.nav" 1718772990 3248 04f88683e470406fc21eb9e1acb56761 "pdflatex"
+  "presentation_2.out" 1718772986 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation_2.tex" 1718772982 23184 f10c25746c11eeb11374d7803f5946ac ""
+  "presentation_2.vrb" 1718772990 642 6e2e6cd4fface265efbc14943283cd0a "pdflatex"
   (generated)
   "presentation_2.aux"
   "presentation_2.log"

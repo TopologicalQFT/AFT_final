@@ -115,7 +115,7 @@ Z = \int \mathcal{D}\phi e^{-S[\phi]} = \sum_{\text{instantons}}  e^{-S_{\text{i
     So, now we can calculate the matrix element of $e^{-HT}$ from $x = -1$ to $x = 1$, using the path integral including instanton solution.
     \begin{align*}
     \small
-    \langle 1 | e^{-HT} | 1 \rangle = \int \mathcal{D}x e^{-S_E} = \sum_{\text{instantons}} e^{-S_{\text{inst}}} \int \mathcal{D}\delta x e^{-S_{\text{fluct}}} \\
+    \langle 1 | e^{-HT} | -1 \rangle = \int \mathcal{D}x e^{-S_E} = \sum_{\text{instantons}} e^{-S_{\text{inst}}} \int \mathcal{D}\delta x e^{-S_{\text{fluct}}} \\
     = e^{-T/2} \sum_{n \text{ odd}} \int_{-T/2}^{T/2} d\tau_1 \int_{-T/2}^{\tau_1} d\tau_2 \cdots \int_{-T/2}^{\tau_{n-1}} d\tau_n e^{-nS_{\text{inst}}} \int \mathcal{D}\delta x e^{-S_{\text{fluct}}} 
     \end{align*}
 
@@ -124,8 +124,8 @@ Here, the fluctuation path integral can be factorized into $n$ parts, which are 
 \begin{align*}
 \small
 \int \mathcal{D}\delta x e^{-S_{\text{fluct}}} &= \left(\int \mathcal{D}\delta x_n e^{-S_{\text{fluct}}}\right)^n e^{-T/2}= K^n e^{-T/2} \\
-    \langle 1 | e^{-HT} | 1 \rangle &= e^{-T/2} \sum_{n \text{ odd}} \int_{-T/2}^{T/2} d\tau_1 \int_{-T/2}^{\tau_1} d\tau_2 \cdots \int_{-T/2}^{\tau_{n-1}} d\tau_n (Ke^{-S_{\text{inst}}})^n \\
-    \langle 1 | e^{-HT} | 1 \rangle &=e^{-T/2} \sum_{n \text{ odd}} \frac{1}{n!} K^n(e^{-S_{\text{inst}}})^n T^n = e^{-T/2} \sinh(KTe^{-S_{\text{inst}}}) \\
+    \langle 1 | e^{-HT} | -1 \rangle &= e^{-T/2} \sum_{n \text{ odd}} \int_{-T/2}^{T/2} d\tau_1 \int_{-T/2}^{\tau_1} d\tau_2 \cdots \int_{-T/2}^{\tau_{n-1}} d\tau_n (Ke^{-S_{\text{inst}}})^n \\
+    \langle 1 | e^{-HT} | -1 \rangle &=e^{-T/2} \sum_{n \text{ odd}} \frac{1}{n!} K^n(e^{-S_{\text{inst}}})^n T^n = e^{-T/2} \sinh(KTe^{-S_{\text{inst}}}) \\
 \end{align*}
 \end{frame}
 
