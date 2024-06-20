@@ -1,15 +1,4 @@
-%% Advanced fields & particles final report
-%% Topic : YM instantons
-%% Author : Seongmin Kim, Taeyoon Kim
-%% Date : 2020. 06. 15
-%% 폭 넓게 쓰라고
 \documentclass{article}
-\usepackage{amssymb}
-\usepackage{slashed}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{subcaption}
 \usepackage{tikz-cd}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -25,169 +14,14 @@
 \newtheorem{note}{Note}
 \newtheorem*{exa}{Ex)}
 
-\title{Yang-Mills Instantons}
-\author{Seongmin Kim, Taeyoon Kim}
-\date{\today}
 
-%% 폭 넓게 하라고
-\usepackage{geometry}
-\geometry{
-    a4paper,
-    total={170mm,257mm},
-    left=20mm,
-    top=20mm,
-}
+
+\title{Instanton}
+\author{Taeyoon Kim}
+\date{}
 
 \begin{document}
-
 \maketitle
-
-\section{Introduction : What is an Instanton?}
-
-%% 줄글 형식
-%% Instanton is a solution to the classical field equations of motion in Euclidean space.
-%% Instanton, a solutions of Euclidean EL equation are localized in (Euclidean) space and time, and have finite (Euclidean) action.
-%% One way to understand instantons is to consider them as a way to evaluate tunneling events in the path integral formulation of quantum field theory.
-%% Instantons are important in understanding non-perturbative effects and tunneling between vacua in quantum field theory.
-%% Instantons only appear in Euclidean space, and they are not solutions to the equations of motion in Minkowski space. So, they are not physical particles or fields, in Real spacetime.
-%% 너가 유연하게 introduction을 쓰라고
-
-What is instanton? Instanton is a solution to the classical field equations of motion in Euclidean space. Instanton solutions of Euclidean EL equation are localized in (Euclidean) space and time, and have finite (Euclidean) action. This is why it is called instanton.
-Instantons only appear in Euclidean space, and they are not solutions to the equations of motion in Minkowski space. So, they are not physical particles or fields, in Real spacetime. So, why do we care about instantons? 
-The answer is that we essentially need wick rotation and Euclidean space to perform path integral calculations in (Minkowski) quantum field theory. 
-So even we are interested in Minkowski space, we should consider instantons, which are classical solutions in Euclidean space.
-In detail, how do instantons affect the QFT in Minkowski space? We will discuss how the instanton effect appears in the path integral formulation, and how it is related to various physical phenomena. 
-
-
-\section{Instanton effect in Path Integral : a Toy Model}
-
-%% Instanton effect in path integral
-\subsection{$0+1$ Dimensional Toy Model : QM with a double well potential}
-
-Let's consider a simple toy model, a quantum mechanical system with a double well potential. The action of the system is given by
-\begin{equation}
-    S = \int dt \left( \frac{1}{2} \dot{x}^2 - V(x) \right)
-\end{equation}
-where the potential is given by $V(x) = \frac{1}{4}x^4 - \frac{1}{2}x^2$.
-The classical Vaccume structure of the system is shown in Fig. \ref{fig:doublewell}.
-\begin{figure}[h]
-    \centering
-    %\includegraphics[width=0.5\textwidth]{doublewell.png}
-    \caption{The vaccume structure of the double well potential, there are two minima at $x = \pm 1$.}
-    \label{fig:doublewell}
-\end{figure}
-
-Classically, the system has two minima at $x = \pm 1$, but quantum mechanically, the system can tunnel between the two minima.
-So the true quantum ground state of the system is a superposition of the two classical ground states, and this splitting of the ground state is totally determined by the tunneling amplitude between the two minima.
-Now, we will evaluate the tunneling amplitude using the path integral formulation of quantum mechanics, including the instanton solution of the system. 
-
-
-
-
-\subsection{Path Integral Formulation and Wick Rotation}
-
-
-When we consider the path integral of the system, the path integral is given by $Z = \int \mathcal{D}x e^{iS[x]}$.
-But, this integral doesn't converge well, so we need to consider the path integral in Euclidean space, $Z = \int \mathcal{D}x e^{-S_E[x]}$, where $S_E[x] = \int dt \left( \frac{1}{2} \dot{x}^2 + V(x) \right)$.
-And to evaluate the original path integral, we just need to wick rotate the time variable, $t \rightarrow -i\tau$.
-
-This looks like just a mathematical trick, and not an essential part of the theory, but in fact, this wick rotation is essential.
-Why? There is no way to consider the instanton effect in the path integral formulation in Minkowski space, because the instanton solutions only appear in Euclidean space.
-Then, is there any posibility to evaluate the instanton effect in Minkowski space? Like using the perturbative expansion of the path integral? The answer is no. The instanton effect is a non-perturbative effect, and it cannot be evaluated by the perturbative expansion of the path integral.
-So, the wick rotation is essential to evaluate the instanton effect in the path integral formulation of quantum field theory.
-
-\subsection{Instanton Solutions in Euclidean Space}
-
-
-The instanton solution of the system is given by the bounce solution, which is a solution to the Euclidean equation of motion, $\delta S_E = 0$.
-The bounce solution is a solution that interpolates between the two minima of the potential, and it is localized in Euclidean time.
-The action of the bounce solution is finite, and it can be evaluated by the Euclidean action of the bounce solution, $S_{\text{bounce}} = \int d\tau \left( \frac{1}{2} \dot{x}^2 + V(x) \right)$.
-
-
-
-
-\subsection{Instanton Contribution to the Path Integral}
-
-The path integral of the system is given by the sum of all possible paths. In the semiclassical limit, the path integral is dominated by the classical solutions, (i.e., the instanton solutions) and the small fluctuations around them.
-So the full path integral is given by the sum of all instanton contributions, with small fluctuations around them.
-\begin{equation}
-    Z = \int \mathcal{D}x e^{-S[x]} = \sum_{\text{instantons}} e^{-S_{\text{inst}}} \int \mathcal{D}\delta x e^{-S_{\text{fluct}}[\delta x]}
-\end{equation}
-where $S_{\text{inst}}$ is the action of the instanton solution, and $S_{\text{fluct}}$ is the action of the small fluctuations around the instanton solution.
-This is how the instanton effect appears in the path integral formulation of quantum field theory. Normally, the instanton effect is not easy to calculate, but in this toy model, we can calculate the instanton effect by hand, with the bounce solution.
-To evaluate the path integral, we need to consider all the possible classical paths.
-Any classical path between the two minima of the potential can be considered as a composition of $n$ single bounce solutions, at time $t_1, ... t_n$, and the instanton action of this classical path is given by $S = \sum_{i=1}^n S_{\text{inst}}=nS_{\text{inst}}$.
-
-So, the Euclidean path integral, from $x = -1$ to $x = 1$, is given by the sum as :
-\begin{equation}
-    \langle x = 1 | e^{-HT} | x = -1 \rangle = \sum_{n \ \text{odd}} e^{-nS_{\text{inst}}} \int_{0}^T \text{d}t_1 \int_{t_1}^T \text{d}t_2 \cdots \int_{t_{n-1}}^T \text{d}t_n \int \mathcal{D}\delta x e^{-S_{\text{fluct}}}
-\end{equation}
-
-The path integral of the fluctuation can be factorized into $n+1$ parts, which are the fluctuation path integrals around each instanton solution, and one for the fluctuation around the classical ground state.
-Using this factorization, we can approximated, $\int \mathcal{D}\delta x e^{-S_{\text{fluct}}} \approx \left( \int \mathcal{D}\delta x_0 e^{-S_{\text{fluct}0}} \right)^n e^{-T/2}=K^n e^{-T/2}$
-Finaly, we get
-\begin{equation}
-    \langle x = 1 | e^{-HT} | x = -1 \rangle = e^{-T/2} \sum_{n \ \text{odd}} \frac{T^n}{n!} K^n e^{-nS_{\text{inst}}}= e^{-T/2}  \text{sinh}(KT e^{-S_{\text{inst}}})
-\end{equation}
-
-So this is the matrix element of $e^{-HT}$ from $x = -1$ to $x = 1$, using the path integral including instanton solution. 
-To evaluate the propagator in Minkowski space, one cas just change the time variable back to Minkowski time, $T \rightarrow -iT$.
-Then, the propagator is given by $\langle x = 1 | e^{-itH} | x = -1 \rangle = e^{-it/2}  \text{sin}(Kt e^{-S_{\text{inst}}})$.
-
-\subsection{Tunneling Amplitude, Instanton Action and WKB Approximation}
-
-In Hamiltonian formalism, the oscillatory behavior of the propagator
-\begin{equation}
-    \langle x = 1 | e^{-itH} | x = -1 \rangle = e^{-it/2}  \text{sin}(Kt e^{-S_{\text{inst}}})
-\end{equation}
-can be understood as an oscilation due to the tunneling amplitude between the two minima of the potential.
-
-
-The tunneling amplitude, $\langle x=1 | H | x=-1 \rangle $, can be evaluated with the WKB approximation, which can be evaluated by approximating the shrodinger equation with the WKB wavefunction.
-
-The result is well known. The tunneling amplitude from two classical vaccume with enegry E, from $x = a$ to $x = b$ is generally given by
-\begin{equation}
-    \langle x = a | H | x = b \rangle \propto \text{exp}\left( -\int_a^b  dx \ \sqrt{2m(V(x)-E)} \right)
-\end{equation}
-
-We can easily show that this WKB approximation is equivalent to the path integral result :
-    
-\begin{align}
-    \dot{x}^2&=2(V(x)-E)/m \rightarrow \dot{x} = \sqrt{2(V(x)-E)/m} \\
-    S_{\text{inst}} &= \int d\tau \left( \frac{1}{2} m \dot{x}^2 + V(x) \right) = \int d\tau \left( \frac{1}{2} m \dot{x}^2 + \frac{1}{2} m \dot{x}^2 + E   \right) \\
-    &= \int dx \ m\dot{x} + E\tau = \int dx \ \sqrt{2m(V(x)-E)} + E\tau 
-\end{align}
-
-So the instanton action is the same as the WKB action, and the tunneling amplitude is given by the instanton action, $e^{-S_{\text{inst}}}$.
-Instanton is a essential ingredient to evaluate the tunneling amplitude in the path integral formulation, and the same result can be obtained by the WKB approximation.
-Here one might wonder, can't we just obtatain the tunneling amplitude by path integral in Minkowski space? Well, the answer is no. We will discuss this in the next section.
-
-\subsection{The non-perturbative behavior of the propagator}
-The propagator in the double well potential was calculated as
-\begin{equation}
-    \langle x = 1 | e^{-itH} | x = -1 \rangle = e^{-it/2}  \text{sin}(Kt e^{-S_{\text{inst}}})
-\end{equation}
-
-In this section, we will discuss the non-perturbative behavior of the propagator.
-Here, the term "non-perturbative" means that phisical quantities are not analytic in $\hbar$, and cannot be evaluated by the perturbative expansion of the path integral.
-So we have to re-introduce $\hbar$ to our calculation, and show that this is not an analytic function of $\hbar$, at $\hbar = 0$.
-
-With $\hbar$, the propagator is given by
-\begin{equation}
-    \langle x = 1 | e^{-itH/\hbar} | x = -1 \rangle = e^{-it/2}  \text{sin}(Ke^{-S_{\text{inst}}/\hbar} t/\hbar)
-\end{equation}
-
-The $e^{-S_{\text{inst}}/\hbar}$ term is non-analytic in $\hbar$, and it is not possible to evaluate this term by the perturbative expansion of the path integral.
-This is because the path integral expansion is in fact, the expansion in $\hbar$. This looks unfamiliar because we usually think of the path integral as the expansion in the coupling constant, and we use $\hbar=1$ conventionally.
-But in fact, in the feynman diagrams, the order of $\hbar$ is the order of the loop expansion, so the perturbative path integral expansion gives an asymptotic series in $\hbar$.
-
-So if you don't have a brand new idea to evaluate path integral non-perturbatively in Minkowski space, you have to go to the Euclidean space, and consider the instanton solutions to evaluate all the non-perturbative effects.
-Going to Euclidean space is not just a mathematical trick, but an essential part of the path integral, in order to overcome the limit of the perturbative expansion of the path integral.
-\section{Yang-Mills Instanton}
-Now, you have a basic understanding of the instanton effect in the path integral formulation of quantum theory.
-Why is it essential, and how does it appear in the path integral, and how does it affect the physical phenomena.
-The phisics of Yangs-Mills instanton is not so much different from the toy model we discussed, but the mathematical structure is highly more complicated.
-In this section, we will focus on the mathematical structure of the Yang-Mills instanton, and discuss the "moduli space" of the instanton solutions.
 
 \section*{Yang Mills Theory}
 
@@ -599,35 +433,4 @@ Is the topological current, counting such instanton numbers. Which can be interp
 Which is asymptotically a Chern Simons term on boundary.
 
 
-
-
-\section{Effects of Instantons in real world physics}
-
-\subsection{Instanton effects in QCD}
-
-
-\subsection{Vaccume structure of QCD and Tunneling effects}
-
-
-\subsection{Easy analogy: QM on a circle}
-
-
-\subsection{The $\theta$-term}
-
-
-\subsection{The $\theta$-term in QCD}
-
-
-\subsection{Chiral Anomaly and $\theta$-vacuum}
-
-
-\section{Instanton effects in Axion phtsics}
-
-\section{References}
-
-
-
-
-
 \end{document}
-
