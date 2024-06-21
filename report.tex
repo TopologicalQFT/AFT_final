@@ -68,7 +68,7 @@ Let's consider a simple toy model, a quantum mechanical system with a double wel
 \begin{equation}
     S = \int dt \left( \frac{1}{2} \dot{x}^2 - V(x) \right)
 \end{equation}
-where the potential is given by $V(x) = \frac{1}{4}x^4 - \frac{1}{2}x^2$.
+where the potential is given by $V(x) = \frac{1}{8}(x^2-1)^2$.
 The classical vacuum structure of the system is shown in Fig. \ref{fig:doublewell}.
 \begin{figure}[h]
     \centering
@@ -101,8 +101,56 @@ So, the wick rotation is essential to evaluate the instanton effect in the path 
 
 The instanton solution of the system is given by the bounce solution, which is a solution to the Euclidean equation of motion, $\delta S_E = 0$.
 The bounce solution is a solution that interpolates between the two minima of the potential, and it is localized in Euclidean time.
-The action of the bounce solution is finite, and it can be evaluated by the Euclidean action of the bounce solution, $S_{\text{bounce}} = \int d\tau \left( \frac{1}{2} \dot{x}^2 + V(x) \right)$.
+Now, we will calculate the bounce solution of the system, and evaluate the instanton action of the bounce solution.
 
+The euclidean Lagrangian is :
+\[
+    L_E = \frac{1}{2}\dot{x}^2 + \frac{1}{8}(x^2-1)^2
+\]
+
+\[
+    S_E = \int_{\tau_i}^{\tau_f} L_E d\tau
+\]
+While the boundary conditions are that $x(-\inf)=-1$, $x(+\inf)=1$. One can observe that action can have a definite minimum, just by a simple calculation :
+\[
+    S_E = \int_{-\infty}^{\infty} \left(\frac{1}{2} (\dot{x}+\frac{1}{2}(x^2-1))^2 - \frac{1}{2}\frac{dx}{d\tau}(x^2-1) \right)d\tau
+\]
+\[
+    =\int_{-\infty}^{\infty} \left(\frac{1}{2} (\dot{x}+\frac{1}{2}(x^2-1))^2 \right)d\tau - \int_{-\infty}^{\infty}   \frac{1}{2}\frac{dx}{d\tau}(x^2-1) d\tau
+\]
+\[
+    =\int_{-\infty}^{\infty} \frac{1}{2} \left(\dot{x}+\frac{1}{2}(x^2-1)\right)^2 d\tau + \int_{-1}^{1}    dx \  \frac{1}{2}(1-x^2) \geq \int_{-1}^{1}    dx \  \frac{1}{2}(1-x^2) \ = \ \frac{2}{3}
+\]
+The first term is always non-negative, and can be minimized to 0 by the solution of the EL equation. 
+The second term is a constant, and this is the action of the instanton solution.
+
+
+\[
+    \frac{dx}{d\tau} = -\frac{1}{2}(x^2-1)
+\]
+\[
+    \frac{1}{2} (\frac{1}{1-x}+\frac{1}{1+x})dx =\frac{dx}{1-x^2} = \frac{1}{2}d\tau
+\]
+
+Hence,
+\[
+    d\log(\frac{1+x}{1-x}) = d\tau
+\]
+This can be simplified as the following.
+\[
+    x(\tau) = \mathrm{tanh}(\frac{1}{2}(\tau-\tau_0))
+\]
+
+Which is the solution, ranging over $-\infty$ to $\infty$. This is an absolute minimum, which is also a solution to EOM.
+
+The instanton action is given by $S_{\text{inst}} = \frac{2}{3}$, and the solution is shown in the figure \ref{fig:instanton}.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.5\textwidth]{instanton.png}
+    \caption{The instanton solution of the double well potential, which interpolates between the two minima of the potential.}
+    \label{fig:instanton}
+\end{figure*}
 
 
 
@@ -666,10 +714,10 @@ In this model, the general instanton solution can be decomposed into the sum of 
 The propagator of the toy model can be calculated by the sum of the instanton and anti-instanton contributions, as:
 \begin{align*}
     \langle x=0 | e^{-HT} | x=0 \rangle &= \sum_{\text{instanton}} e^{-S_{\text{instanton}}} \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
-    &= \sum_{n,m} e^{-(n+m)S_{\text{instanton}}} \int dt_1 ... dt_n \ ds_1 ... ds_m \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
-    &= \sum_{n,m} e^{-(n+m)S_{\text{instanton}}} \frac{T^n}{n!} \frac{T^m}{m!} K^{n+m} e^{-T/2} \\
-    &= \exp(-T/2) \ \exp(K e^{-S_{\text{instanton}}} T) \ \exp(K e^{-S_{\text{instanton}}} T) \\
-    &= \exp(-(\frac{1}{2}-2K e^{-S_{\text{instanton}}})T)
+    &= \sum_{n,m} e^{-(n+m)S_{\text{inst}}} \int dt_1 ... dt_n \ ds_1 ... ds_m \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
+    &= \sum_{n,m} e^{-(n+m)S_{\text{inst}}} \frac{T^n}{n!} \frac{T^m}{m!} K^{n+m} e^{-T/2} \\
+    &= \exp(-T/2) \ \exp(K e^{-S_{\text{inst}}} T) \ \exp(K e^{-S_{\text{inst}}} T) \\
+    &= \exp(-(\frac{1}{2}-2K e^{-S_{\text{inst}}})T) \\
     &= \exp(-E_{gs}T)
 \end{align*}
 
@@ -678,9 +726,74 @@ The time $t_i$ and $s_j$ are the time of the each instanton and anti-instanton.
 
 Now, we optained the ground state energy of the toy model, $E_{gs}$.
 \[
-    E_{gs} = \frac{1}{2}\hbar-2K e^{-S_{\text{instanton}}/\hbar}
+    E_{gs} = \frac{1}{2}\hbar-2K e^{-S_{\text{inst}}/\hbar}+ \mathcal{O}(\hbar)
 \]
+The higher order terms are the perturbative terms, and can be calculated by the perturbation theory.( i.e. the feynman diagrams)
+But this is not in our interest, and we just evaluate the perturbative quantum corrections only up to $\mathcal{O}(\hbar)$.
+
 \subsection{The $\theta$-term}
+In this section, we will introduce the $\theta$-term to the toy model.
+The action of the toy model, including the $\theta$-term, is given by
+\[
+    S = \int dt \left( \frac{1}{2} \dot{x}^2 + \cos x + \frac{\theta}{2\pi} \dot{x} \right)
+\]
+
+This $\theta$-term is a total derivative term, and does not affect the classical EOM.
+So one can think that this term has no effect at all, and the action is equivalent to the action without the $\theta$-term.
+But this is not true, and the $\theta$-term plays a very important role in the quantum theory.
+In this section, we will reproduce the instanton effect calculation with the $\theta$-term.
+When this term is included, the instanton action is modified as :
+\[
+    S_{\text{inst}} \rightarrow S_{\text{inst}} + \int dt \frac{\theta}{2\pi} \dot{x} = S_{\text{inst}} + \frac{\theta}{2\pi} \oint dx = S_{\text{inst}} \pm \theta
+\]
+Where the $\pm$ sign is the instanton and anti-instanton, respectively.
+
+Now, we redo the calculation of the propagator with the $\theta$-term.
+
+\begin{align*}
+    \langle x=0 | e^{-HT} | x=0 \rangle &= \sum_{\text{instanton}} e^{-S_{\text{instanton}}} \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
+    &= \sum_{n,m} e^{-(n+m)S_{\text{inst}}}  e^{i(n-m)\theta}  \int dt_1 ... dt_n \ ds_1 ... ds_m \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
+    &= \sum_{n,m} e^{-(n+m)S_{\text{inst}}} e^{i(n-m)\theta} \ \frac{T^n}{n!} \frac{T^m}{m!} K^{n+m} e^{-T/2} \\
+    &= \exp(-T/2) \ \exp(K e^{-S_{\text{inst}}+i\theta} T) \ \exp(K e^{-S_{\text{inst}}-i\theta} T) \\
+    &= \exp(-(\frac{1}{2}-2K \cos (\theta )e^{-S_{\text{inst}}})T) \\
+    &= \exp(-E_{gs}T)
+\end{align*}
+
+And the ground state energy is given by
+\[
+    E_{gs} = \frac{1}{2}\hbar-2K \cos (\theta ) e^{-S_{\text{inst}}/\hbar}+ \mathcal{O}(\hbar)
+\]
+
+So, we can see that the $\theta$-term affects the ground state energy, and the instanton effect is modified by the $\theta$-term.
+How can we interpret this result? The $\theta$-term is a total derivative term, and does not affect the classical EOM, nor even the Hamiltonian of the system (at least up to a canonical transformation, at the classical level).
+But, the $\theta$-term affects the quantum theory, and the ground state energy is modified by the $\theta$-term.
+
+The answer can be found in the path integral formalism.
+In the path integral formalism, $\theta$-term affects the instanton action, and this results in the phase factor to the tunneling amplitude.
+
+Of course, this phase factor to the tunneling amplitude can be otained with the wavefunction quantum mechanics, using the Schrödinger equation and the WKB approximation.
+In the Hamiltonian formalism, the $\theta$-term shifts the conjugate momentum of the field, and this results changing the boundary condition of the wavefunction.
+\[
+    \psi(x+2\pi) = e^{i\theta} \psi(x)
+\]
+This can be derived easily. First, the conjugate momentum of the field $x(t)$ is given by
+\[
+    p=-i\frac{\partial}{\partial x} \rightarrow p-\theta=-i\frac{\partial}{\partial x}
+\]
+So, the wavefuntion should modified as
+\[
+    \psi'(x) = e^{i\theta x} \psi(x)
+\]
+to make the momentum operator acts as the same as the original one.
+\[
+    -i\frac{\partial}{\partial x} \psi'(x) = -i\frac{\partial}{\partial x} e^{i\theta x} \psi(x) = e^{i\theta x} (-i\frac{\partial}{\partial x} \psi(x) + i\theta \psi(x)) = (p-\theta) \psi'(x)
+\]
+and this condition leads to the modified boundary condition of the wavefunction : $\psi(x+2\pi) = e^{i\theta} \psi(x)$.
+
+
+
+\subsubsection{}
+
 
 
 \subsection{The $\theta$-term in QCD}

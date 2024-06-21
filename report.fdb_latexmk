@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1718954168.0811 "c:/Users/kimsm/Documents/Beamer/report.tex" "report.pdf" "report" 1718954170.58087 0
-  "c:/Users/kimsm/Documents/Beamer/report.tex" 1718954166 41921 989b32ffa6d7ac5b78aef572be1685e1 ""
+["pdflatex"] 1718967765.39118 "c:/Users/kimsm/Documents/Beamer/report.tex" "report.pdf" "report" 1718967767.62292 0
+  "c:/Users/kimsm/Documents/Beamer/report.tex" 1718967762 47527 3a799ca273b529aeb013de1cd53ca274 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1716717178 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1716714392 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1716714392 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -228,9 +228,10 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1716723843 5529302 90924f286bd62ce7380ad2a7c245cc29 ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1716724119 8225741 ecfed6e312c99df9315d4f5b069fe919 ""
   "c:/texlive/2024/texmf.cnf" 1716723809 713 e69b156964470283e0530f5060668171 ""
-  "report.aux" 1718954170 2962 66ec9544a319958d130cd84b18bbf9f4 "pdflatex"
-  "report.out" 1718954170 4050 a4d52059000da5f6d43e4e607932912f "pdflatex"
-  "report.tex" 1718954166 41921 989b32ffa6d7ac5b78aef572be1685e1 ""
+  "instanton.png" 1718964105 115209 ae8efd73e5e8aed0619eeff9b1c64834 ""
+  "report.aux" 1718967767 3479 b788564872989044a2eef2e2f43c9960 "pdflatex"
+  "report.out" 1718967767 4110 b09e0771a60fc4cfb6c7c16076099a50 "pdflatex"
+  "report.tex" 1718967762 47527 3a799ca273b529aeb013de1cd53ca274 ""
   (generated)
   "report.aux"
   "report.log"
