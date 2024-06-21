@@ -72,7 +72,7 @@ where the potential is given by $V(x) = \frac{1}{8}(x^2-1)^2$.
 The classical vacuum structure of the system is shown in Fig. \ref{fig:doublewell}.
 \begin{figure}[h]
     \centering
-    %\includegraphics[width=0.5\textwidth]{doublewell.png}
+    \includegraphics[width=0.5\textwidth]{potential.png}
     \caption{The vacuum structure of the double well potential, there are two minima at $x = \pm 1$.}
     \label{fig:doublewell}
 \end{figure}
@@ -778,30 +778,113 @@ In the Hamiltonian formalism, the $\theta$-term shifts the conjugate momentum of
 \]
 This can be derived easily. First, the conjugate momentum of the field $x(t)$ is given by
 \[
-    p=-i\frac{\partial}{\partial x} \rightarrow p-\theta=-i\frac{\partial}{\partial x}
+    p=-i\frac{\partial}{\partial x} \rightarrow p-\frac{\theta}{2\pi}=-i\frac{\partial}{\partial x}
 \]
 So, the wavefuntion should modified as
 \[
-    \psi'(x) = e^{i\theta x} \psi(x)
+    \psi'(x) = e^{i\frac{\theta}{2\pi} x} \psi(x)
 \]
 to make the momentum operator acts as the same as the original one.
 \[
-    -i\frac{\partial}{\partial x} \psi'(x) = -i\frac{\partial}{\partial x} e^{i\theta x} \psi(x) = e^{i\theta x} (-i\frac{\partial}{\partial x} \psi(x) + i\theta \psi(x)) = (p-\theta) \psi'(x)
+    -i\frac{\partial}{\partial x} \psi'(x) = -i\frac{\partial}{\partial x} e^{i\frac{\theta}{2\pi} x} \psi(x) = e^{i\frac{\theta}{2\pi} x} (-i\frac{\partial}{\partial x} \psi(x) + i\frac{\theta}{2\pi} \psi(x)) = (p-\frac{\theta}{2\pi}) \psi'(x)
 \]
 and this condition leads to the modified boundary condition of the wavefunction : $\psi(x+2\pi) = e^{i\theta} \psi(x)$.
 
+So in the Hamiltonian formalism, the canonical conjugate momentum shifts as $p\rightarrow p-\frac{\theta}{2\pi}$, and this results in the modified boundary condition of the wavefunction.
 
+\subsubsection{Numerical calculation}
+In this section, we will calculate the ground state energy of the toy model with the $\theta$-term, numerically.
+The calculation is done in the Fourier basis, and the Hamiltonian is diagonalized with large enough basis size.
+The result is shown in the following figure.
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{E_G.png}
+        \caption{The ground state energy of the toy model with the $\theta$-term.}
+        \label{fig:E_G}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{E_G_diff.png}
+        \caption{The difference of the ground state energy with $\theta=0$ and $\theta=\pi$. The slope of the fitting line is $-8.05\pm 0.02$, and this is well matched with the theoretical prediction.}
+        \label{fig:E_G_diff}
+    \end{subfigure}
+\end{figure}
 
-\subsubsection{}
+The result shows the ground state energy of the toy model with the $\theta$-term.
+In the figure \ref{fig:E_G}, the ground state energy is plotted with $\hbar$.
+Here one can see that the difference of two lines supresses very quickly, and this agrees with the theoretical prediction that the $\theta$-term only affects the non-analytic terms in $\hbar$.
+
+The difference of the ground state energy, with $\theta=0$ and $\theta=\pi$ can be calculated as
+\[
+    E_{gs} = \frac{1}{2}\hbar-2K \cos (\theta ) e^{-S_{\text{inst}}/\hbar}+ \mathcal{O}(\hbar)
+\]
+\[
+    E_{gs}(\theta=\pi)-E_{gs}(\theta=0) = 4K e^{-S_{\text{inst}}/\hbar}
+\]
+\[
+    S_{\text{inst}} = \int_0^{2\pi} dx \sqrt{2(1-\cos x)} = 8
+\]
+So, the difference of the ground state energy is expected to be
+\[
+    E_{gs}(\theta=\pi)-E_{gs}(\theta=0) = 4K e^{-S_{\text{inst}}/\hbar} = 4K e^{-8/\hbar}
+\]
+And this theoretical prediction is well matched with the numerical calculation, as shown in the figure \ref{fig:E_G_diff}.
 
 
 
 \subsection{The $\theta$-term in QCD}
 
+In this section, we return to the QCD, and introduce a similar $\theta$-term to the QCD.
+The $\theta$-term in QCD is given by
+\[
+    S_{\theta} = \frac{\theta}{32\pi^2} \int d^4 x \mathrm{tr}(F_{\mu\nu} \tilde{F}^{\mu\nu})
+\]
+And this action is also a topological, total derivative term, and does not affect the classical EOM.
 
-\subsection{Chiral Anomaly and $\theta$-vacuum}
+But, this term affects the quantum theory, by affecting the instanton action.
+The instanton action is modified as
+\[
+    S_{\text{inst}} \rightarrow S_{\text{inst}} + \frac{\theta}{2\pi} \oint d^4 x \mathrm{tr}(F_{\mu\nu} \tilde{F}^{\mu\nu}) = S_{\text{inst}} + \theta n
+\]
+So this term affects the tunneling amplitude of YM theory, and affects many physical quantities of QCD.
+At low energy, QCD coupling constant is large, and it is confinig phase. So there are many non-perturbative(in the coupling constant) effects, and the $\theta$-term can possibly affect all of them.
 
-\section{References}
+The $\theta$-dependence of the vacuum energy of QCD is straightforward, just as in the Toy model.
+One can calculate the vacuum energy of QCD, with similar calculation using the dilute gas approximation.
+\[
+    E_{\text{vac}} = E_{\text{vac}}(g) + \Delta(g) \cos(\theta)
+\]
+Where $E_{\text{vac}}(g)$ is the perturbative part of the vacuum energy, which can be calculated by the perturbation theory, and $\Delta(g)$ is the non-perturbative part of the vacuum energy, which can be calculated by the instanton effect.
+The detailed calculation of the vacuum energy of QCD is beyond the scope of this paper, and we will not discuss it here.
+One need to consider the instanton moduli space, and the instanton measure, and the instanton determinant, and so on, to calculate the non-perturbative part of the vacuum energy of QCD.
+
+One other important effect of the $\theta$-term is the neutron electric dipole moment.
+The $\theta$-term violates the CP symmetry, and this is the only CP-violating term in the QCD.
+So all the CP-violating phenomena in the QCD is originated from the $\theta$-term.
+The neutron electric dipole moment is a very important physical quantity in this context.
+It is a very sensitive probe of the CP violation, so the theoretical prediction of the neutron electric dipole moment is very important to test the QCD and the standard model. 
+
+But the calculation is very complicated, and not based on the path integral formalism. So we will not discuss it here.
+
+\section{Conclusion}
+
+In this paper, we studied the instanton effect in the toy model, and the $\theta$-term in the toy model and QCD.
+The instanton effect is a very important non-perturbative effect in the YM theory, and the $\theta$-term is a very important term because it affects all the non-perturbative effects in the QCD.
+
+We introduced the dilute gas approximation to calculate the instanton effect, and showed that the instanton calculation gives the tunneling amplitude, which we cannot obtain by the perturbation theory.
+We also showed that this tunneling amplitude equals to the result of the WKB approximation, which is a another non-perturbative method.
+
+Next, we explained the mathematical structure of the YM theory, and the instanton solution, and the instanton moduli space.
+The instanton moduli space is the space of the instanton solutions, and calculating the dimension of the instanton moduli space is very important to understand the nature of YM instantons.
+
+After that, we explained the vacuum structure of the YM theory, and the $\theta$-term in the YM theory and QCD.
+To explain this, we introduced the quantum mechanics on a circle, and showed that the $\theta$-term affects the non-perturbative part of the ground state energy of the system.
+There, we showed the numerical calculation of the ground state energy of the toy model with the $\theta$-term, and showed that the numerical result is well matched with the path integral calulation with dilute gas approximation.
+
+Finally, we explained the neutron electric dipole moment, and the importance of the $\theta$-term in the QCD.
+
 
 
 
