@@ -69,11 +69,11 @@ Let's consider a simple toy model, a quantum mechanical system with a double wel
     S = \int dt \left( \frac{1}{2} \dot{x}^2 - V(x) \right)
 \end{equation}
 where the potential is given by $V(x) = \frac{1}{4}x^4 - \frac{1}{2}x^2$.
-The classical Vaccume structure of the system is shown in Fig. \ref{fig:doublewell}.
+The classical vacuum structure of the system is shown in Fig. \ref{fig:doublewell}.
 \begin{figure}[h]
     \centering
     %\includegraphics[width=0.5\textwidth]{doublewell.png}
-    \caption{The vaccume structure of the double well potential, there are two minima at $x = \pm 1$.}
+    \caption{The vacuum structure of the double well potential, there are two minima at $x = \pm 1$.}
     \label{fig:doublewell}
 \end{figure}
 
@@ -145,7 +145,7 @@ can be understood as an oscilation due to the tunneling amplitude between the tw
 
 The tunneling amplitude, $\langle x=1 | H | x=-1 \rangle $, can be evaluated with the WKB approximation, which can be evaluated by approximating the shrodinger equation with the WKB wavefunction.
 
-The result is well known. The tunneling amplitude from two classical vaccume with enegry E, from $x = a$ to $x = b$ is generally given by
+The result is well known. The tunneling amplitude from two classical vacuum with enegry E, from $x = a$ to $x = b$ is generally given by
 \begin{equation}
     \langle x = a | H | x = b \rangle \propto \text{exp}\left( -\int_a^b  dx \ \sqrt{2m(V(x)-E)} \right)
 \end{equation}
@@ -608,14 +608,78 @@ Though we did not mention it, the instanton possibly affects any other term, whi
 
 In the real world, the instanton effect is crucial to understand the vacuum structure of QCD.
 And due to the large coupling constant of QCD, the low energy phenomena are highly non-perturbative.
-First, we study the classical vaccume structure of YM theory.
+First, we study the classical vacuum structure of YM theory.
 
-\subsection{Vaccume structure of YM theory}
+\subsection{vacuum structure of YM theory}
+The classical vacuum structure of YM theory can be derived easily.
+The YM action is given by
+\[
+    S_{YM} = \int d^4 x \frac{1}{2g^2} \mathrm{tr}(F_{\mu\nu}F^{\mu\nu})
+\]
+Fron the action, we can derive the conjugate momentum of $A_\mu$, and the Hamiltonian.
+The Hamiltonian is given by
+\[
+    H = \int d^3 x \left( \frac{1}{2} \mathrm{tr}(E_i E_i + B_i B_i)  \right)
+\]
+Wher $E_i$ is the "electric field", $F_{0i}$, and $B_i$ is the magnetic field, the 3D Hodge dual of $F_{ij}$.
+Classically, the vacuum is the minimum of the Hamiltonian. So, it is clear that the vacuum should satisfy
+\[
+    E_i = 0, B_i = 0
+\]
+Which is equivalent to $F_{\mu\nu} = 0$.
+So, the classical vacuum of YM theory corresponds to the flat connection.
+If we consider topologically non-trivial spacetime, the vacuum structure can be nontrivial.
+The flat connection is a group homomorphism from the fundamental group of spacetime to the gauge group.
+If the fundamental group is nontrivial, the flat connection is nontrivial.
+
+But, here we consider $\mathbb{R}^4$, which has only trivial vacuum.
+This case, There is only one vacuum, the trivial vacuum, $A_\mu = i g^{-1} \partial_\mu g g^{-1}$.
+There are topologically nontrivial global gauge transformations, and they can make nontrivial gauge configurations $A_\mu$.
+But in this paper, we will assume that they are also equivalent to the trivial vacuum.
+
+This is not always a good assumption, and there are many papers studying YM and QCD with distinguishing topologically nontrivial gauge configurations.
+In that case, the vacuum with nontrivial global gauge transformation is called the $N$-vacuum, and the whole story will be different.
+But, in this paper, we will assume that all the $N$-vacuum is equivalent to the trivial vacuum.
 
 
 \subsection{Easy analogy: QM on a circle}
+In the last section, we studied the classical vacuum structure of YM theory.
+And we found that there is only one vacuum, the trivial vacuum. (Up to gauge transformation, including global gauge transformations with nontrivial topology.)
+So, there is one question, "How can a tunneling effect happen, if there is only one vacuum?"
 
+To answer this question, let's consider a simple analogy, the quantum mechanics on a circle.
+And there should be only one vacuum, so the potential will be $V(x)=-\cos x$.
+Then the potential has only one minimum, $x=0$.
 
+The action of the system is given by
+\[
+    S = \int dt \left( \frac{1}{2} \dot{x}^2 + \cos x \right)
+\]
+And this system's Energy spectrum can be calculated easily by computer, by diagonalizing the Hamiltonian in the Fourier basis.
+So this is a very good analogy for understanding the tunneling effect in the YM theory.
+\subsection{The instanton in the toy model}
+In the toy model, there is a instanton solution, which is a path winding the circle, from $x=0$ to $x=2\pi=0$.
+This is a "tunneling-to-itself", and this is the tunneling effect in the toy model, and very similar to the instanton effect in the YM theory.
+The instanton effect can be calculated by the path interal similar to the previous double well potential case, using the same dilute gas approximation.
+In this model, the general instanton solution can be decomposed into the sum of the instanton(clockwise) and anti-instanton(anti-clockwise).
+
+The propagator of the toy model can be calculated by the sum of the instanton and anti-instanton contributions, as:
+\begin{align*}
+    \langle x=0 | e^{-HT} | x=0 \rangle &= \sum_{\text{instanton}} e^{-S_{\text{instanton}}} \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
+    &= \sum_{n,m} e^{-(n+m)S_{\text{instanton}}} \int dt_1 ... dt_n \ ds_1 ... ds_m \int \mathcal{D}\delta x \exp(-S_{\text{fluctuation}}(\{t_i,s_j\})) \\
+    &= \sum_{n,m} e^{-(n+m)S_{\text{instanton}}} \frac{T^n}{n!} \frac{T^m}{m!} K^{n+m} e^{-T/2} \\
+    &= \exp(-T/2) \ \exp(K e^{-S_{\text{instanton}}} T) \ \exp(K e^{-S_{\text{instanton}}} T) \\
+    &= \exp(-(\frac{1}{2}-2K e^{-S_{\text{instanton}}})T)
+    &= \exp(-E_{gs}T)
+\end{align*}
+
+In the calculation, $n$ and $m$ are the number of instanton and anti-instanton, and $K$ is the fluctuation determinant.
+The time $t_i$ and $s_j$ are the time of the each instanton and anti-instanton.
+
+Now, we optained the ground state energy of the toy model, $E_{gs}$.
+\[
+    E_{gs} = \frac{1}{2}\hbar-2K e^{-S_{\text{instanton}}/\hbar}
+\]
 \subsection{The $\theta$-term}
 
 
@@ -623,9 +687,6 @@ First, we study the classical vaccume structure of YM theory.
 
 
 \subsection{Chiral Anomaly and $\theta$-vacuum}
-
-
-\section{Instanton effects in Axion phtsics}
 
 \section{References}
 

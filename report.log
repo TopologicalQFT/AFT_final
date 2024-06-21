@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.26)  20 JUN 2024 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.26)  21 JUN 2024 16:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -661,71 +661,74 @@ LaTeX Font Info:    Font shape `U/rsfs/m/n' will be
 (Font)              scaled to size 7.0pt on input line 454.
 LaTeX Font Info:    Font shape `U/rsfs/m/n' will be
 (Font)              scaled to size 5.0pt on input line 454.
- [7] [8]
+ [7] [8] [9]
+Overfull \hbox (14.84006pt too wide) detected at line 674
+[]
+ []
+
 LaTeX Font Info:    Font shape `U/rsfs/m/n' will be
-(Font)              scaled to size 12.0pt on input line 617.
+(Font)              scaled to size 12.0pt on input line 683.
 LaTeX Font Info:    Font shape `U/rsfs/m/n' will be
-(Font)              scaled to size 8.0pt on input line 617.
+(Font)              scaled to size 8.0pt on input line 683.
 LaTeX Font Info:    Font shape `U/rsfs/m/n' will be
-(Font)              scaled to size 6.0pt on input line 617.
+(Font)              scaled to size 6.0pt on input line 683.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 683.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 617.
+(hyperref)                removing `\theta' on input line 683.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 617.
+(hyperref)                removing `math shift' on input line 683.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 617.
+(hyperref)                removing `math shift' on input line 686.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `\theta' on input line 686.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 620.
+(hyperref)                removing `math shift' on input line 686.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 689.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 623.
+(hyperref)                removing `\theta' on input line 689.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 623.
+(hyperref)                removing `math shift' on input line 689.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 623.
-
-[9] (./report.aux)
+[10] (./report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 072614F8B1BACAC241E29696346D2633;4058.
+(rerunfilecheck)             Checksum: A4D52059000DA5F6D43E4E607932912F;4050.
  ) 
 Here is how much of TeX's memory you used:
- 33625 strings out of 473993
- 784861 string characters out of 5745069
+ 33628 strings out of 473993
+ 784934 string characters out of 5745069
  1945907 words of memory out of 5000000
- 55529 multiletter control sequences out of 15000+600000
+ 55531 multiletter control sequences out of 15000+600000
  568685 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,15n,107p,757b,1053s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on report.pdf (9 pages, 274688 bytes).
+Output written on report.pdf (10 pages, 280108 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
